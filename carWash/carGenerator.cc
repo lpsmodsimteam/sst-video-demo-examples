@@ -9,6 +9,7 @@ This component generates "cars" which are sent to the carwash
 #include "carGenerator.h"
 
 using SST::Interfaces::StringEvent;
+using namespace SST::carWash;
 
 carGenerator::carGenerator( SST::ComponentId_t id, SST::Params& params ) : SST::Component(id) {
 	

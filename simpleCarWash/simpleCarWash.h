@@ -3,7 +3,6 @@
 
 #include <sst/core/component.h>
 #include <sst/core/link.h>
-#include <sst/core/elementinfo.h>
 
 #define WASH_BAY_EMPTY 0
 #define WASH_BAY_FULL 1

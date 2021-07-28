@@ -2,7 +2,6 @@
 #define _hello_H
 
 #include <sst/core/component.h>
-#include <sst/core/elementinfo.h>
 
 class hello : public SST::Component {
 

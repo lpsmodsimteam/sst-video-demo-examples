@@ -3,7 +3,6 @@
 
 #include <sst/core/component.h>
 #include <sst/core/link.h>
-#include <sst/core/elementinfo.h>
 #include <sst/core/subcomponent.h>
 
 #define WASH_BAY_EMPTY 0
@@ -15,13 +14,15 @@
 // carWash subcomponent prototype
 class carWashBay : public SST::SubComponent {
 public:
-	// constructor and destructor cannot be virtual, all other functions must be
-	carWashBay(SST::Component *owningComponent) : SubComponent(owningComponent) {};
-	~carWashBay() {};
+	// constructor cannot be virtual, all other functions must be
+	carWashBay(SST::ComponentId_t id) : SubComponent(id) {};
+	carWashBay(SST::ComponentId_t id, SST::Params& params) : SubComponent(id) {};
+	virtual ~carWashBay() {};
 	virtual bool newCar(int CarType) = 0;
 	virtual int baySize() = 0;
 	virtual int isOccupied() = 0;
 	virtual void tick() {};
+	SST_ELI_REGISTER_SUBCOMPONENT_API(carWashBay)
 };
 
 
@@ -84,7 +85,7 @@ public:
 	
 	// Slot name, description, slot type
 	SST_ELI_DOCUMENT_SUBCOMPONENT_SLOTS(
-		{ "bay", "Car Wash Bay", "SST::carWash::carWashBay" }
+		{ "carWashBay", "Car Wash Bay", "SST::carWash::carWashBay" }
 	)
 
 	// Port name, description, event type

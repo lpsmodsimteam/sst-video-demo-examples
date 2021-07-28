@@ -31,11 +31,11 @@ carWash::carWash( SST::ComponentId_t id, SST::Params& params ) : SST::Component(
 	
 	// Initialize subcomponents
 	// Using this technique allows for 1 or more bays
-	SST::SubComponentSlotInfo* info = getSubComponentSlotInfo("bay");
+	SST::SubComponentSlotInfo* info = getSubComponentSlotInfo("carWashBay");
 	if ( !info ) {
 		output.fatal(CALL_INFO, -1, "Must specify at least one bay.\n");
 	}
-	info->createAll(subComps);
+	info->createAll<carWashBay>(subComps, SST::ComponentInfo::SHARE_NONE);
 	
 	// tell the simulator not to end without us
 	registerAsPrimaryComponent();

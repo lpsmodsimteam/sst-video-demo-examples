@@ -6,7 +6,7 @@
 class bay : public carWashBay {
 
 public:
-	bay( SST::Component *owningComponent, SST::Params& params );
+	bay( SST::ComponentId_t id, SST::Params& params );
 	~bay();
 
 	bool newCar(int CarType);
@@ -15,13 +15,13 @@ public:
 	void tick();
 
 	// Register the subcomponent
-	SST_ELI_REGISTER_SUBCOMPONENT(
+	SST_ELI_REGISTER_SUBCOMPONENT_DERIVED(
 		bay, // class
 		"carWash", // element library
 		"bay", // subcomponent
 		SST_ELI_ELEMENT_VERSION( 1, 0, 0 ),
 		"Bay subcomponent for the carwash",
-		"SST::carWash::carWashBay" // subcomponent slot
+		carWashBay // subcomponent slot
 	)
 
 	// Parameter name, description, default value

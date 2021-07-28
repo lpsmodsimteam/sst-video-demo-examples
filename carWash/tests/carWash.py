@@ -8,14 +8,14 @@ carWashComponent.addParams({
 	})
 
 # Subcomponent slot "bay" using component bay from element carWash (carWash.bay), number 0
-baySubcomponent0 = carWashComponent.setSubComponent("bay", "carWash.bay", 0)
+baySubcomponent0 = carWashComponent.setSubComponent("carWashBay", "carWash.bay", 0)
 baySubcomponent0.addParams({
 	"size" : "1", # small car bay
 	"smallCarWashTime" : "3"
 	})
 
 # Subcomponent slot "bay" using component bay from element carWash (carWash.bay), number 1
-baySubcomponent1 = carWashComponent.setSubComponent("bay", "carWash.bay", 1)
+baySubcomponent1 = carWashComponent.setSubComponent("carWashBay", "carWash.bay", 1)
 baySubcomponent1.addParams({
 	"size" : "2", # large car bay
 	"smallCarWashTime" : "3",
@@ -23,7 +23,7 @@ baySubcomponent1.addParams({
 	})
 
 # Subcomponent slot "bay" using component bay from element carWash (carWash.bay), number 2
-baySubcomponent2 = carWashComponent.setSubComponent("bay", "carWash.bay", 2)
+baySubcomponent2 = carWashComponent.setSubComponent("carWashBay", "carWash.bay", 2)
 baySubcomponent2.addParams({
 	"size" : "2", # large car bay
 	"smallCarWashTime" : "3",

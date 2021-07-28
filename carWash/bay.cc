@@ -10,7 +10,7 @@ Large bays can wash small or large cars
 #include <sst/core/sst_config.h>
 #include "bay.h"
 
-bay::bay(SST::Component *owningComponent, SST::Params &params) : carWashBay(owningComponent){
+bay::bay(SST::ComponentId_t id, SST::Params &params) : carWashBay(id){
 	
 	output.init("bay-" + getName() + "-> ", 1, 0, SST::Output::STDOUT);
 

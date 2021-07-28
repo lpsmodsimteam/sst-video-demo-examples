@@ -3,8 +3,9 @@
 
 #include <sst/core/component.h>
 #include <sst/core/link.h>
-#include <sst/core/elementinfo.h>
 #include <sst/core/rng/marsaglia.h>
+
+namespace SST::carWash {
 
 class carGenerator : public SST::Component {
 
@@ -45,5 +46,7 @@ private:
 	int64_t RandomSeed;
 	SST::Link *port;
 };
+
+}
 
 #endif

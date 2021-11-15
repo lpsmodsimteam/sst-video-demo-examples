@@ -11,7 +11,15 @@ the typical pattern of people waiting for a car wash, and the cost of building a
 
 Sue is looking for your help in understanding whether it would make financial sense to construct one or more new car wash bays. 
 
-# mapping the business scenario and question to Discrete Event Simulation using the Structural Simulation Toolkit
+# is there an analytic solution available?
+
+Before writing software, can a solution be calculated? If the answer is yes, then there is no need to implement code.
+
+When there are multiple [stocastic variables](https://en.wikipedia.org/wiki/Random_variable) interacting, numerical simulation is a useful approach. 
+
+# mapping the business scenario and questions to Discrete Event Simulation (DES)
+
+If the model can be expressed in terms of timing and queues, then Discrete Event Simulation (DES) is relevant.
 
 From the scenario, what should the model be? 
 
@@ -24,4 +32,20 @@ Potential constraints:
 * Sue has a limited budget
 * the number of customers
 
-A Discrete Event Simulation is focused on timing, so the specific monetary cost values are not necessary for the model. 
+A Discrete Event Simulation is focused on timing and queues, so the specific monetary cost values are not necessary for the model. 
+
+TODO: what variables should be in the car wash model?
+
+# which Discrete Event Simulation (DES) to use?
+
+Selecting a Discrete Event Simulator is based on which programming language and what scale. 
+* serial Python: SimPy
+* parallel C++ (with MPI): Structural Simulation Toolkit (SST)
+
+Writing your own DES is feasible. TODO: pros and cons. 
+
+TODO: what other DES software candidates exist, and why use each?
+
+# implementing the model using the Structural Simulation Toolkit 
+
+SST is a [software framework](https://en.wikipedia.org/wiki/Software_framework), in that [inversion of control](https://en.wikipedia.org/wiki/Inversion_of_control) requires you to provide customized code that will be called by `sst`. There are two main aspects you need to provide SST: the set of components and the graph which is constructed from those components. Each component is a node in the graph, and the edges of the graph are called "links" in SST.
